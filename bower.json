@@ -1,0 +1,45 @@
+{
+  "name": "portfolio",
+  "description": "",
+  "main": "",
+  "license": "",
+  "keywords": [],
+  "homepage": "",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-inputlimiter": "https://github.com/mythril/jquery-inputlimiter.git",
+    "ModalWindowEffects": "*",
+    "bootstrap-datepicker": "1.6.4",
+    "bootstrap-timepicker": "~0.2.5",
+    "bootstrap-daterangepicker": "2.1.17",
+    "bootstrap_calendar": "~1.0.1",
+    "bootstrapValidator": "0.5.2",
+    "jQuery-Validation-Engine": "~0.1.0",
+    "jquery.uniform": "~2.1.2",
+    "datatables-responsive": "~2.1.1",
+    "fancybox": "~2.1.5",
+    "jquery.newsTicker": "https://github.com/risq/jquery-advanced-news-ticker.git",
+    "ihover": "~1.0.0",
+    "themify-icons": "~0.1.2",
+    "ionicons": "~1.5.2",
+    "unitegallery": "~1.7.28",
+    "tooltip.js": "https://unpkg.com/tooltip.js",
+    "LC-switch": "https://github.com/LCweb-ita/LC-switch.git",
+    "jScrollPane": "https://github.com/vitch/jScrollPane.git",
+    "bootstrap3-wysihtml5-bower": "~0.3.3"
+  },
+  "resolutions": {
+    "jquery": "^3.2.1",
+    "bootstrap": "4.0.0-beta"
+  }
+}

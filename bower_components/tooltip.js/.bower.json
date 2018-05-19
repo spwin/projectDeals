@@ -1,0 +1,13 @@
+{
+  "name": "tooltip.js",
+  "_cacheHeaders": {
+    "ETag": "W/\"4bca-1621ab2cbe0\"",
+    "Last-Modified": "Mon, 12 Mar 2018 14:52:28 GMT",
+    "Content-Type": "application/javascript; charset=utf-8"
+  },
+  "_release": "e-tag:W/\"4bca-16",
+  "main": "index.js",
+  "_source": "https://unpkg.com/tooltip.js",
+  "_target": "*",
+  "_originalSource": "https://unpkg.com/tooltip.js"
+}

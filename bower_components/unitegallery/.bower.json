@@ -1,0 +1,28 @@
+{
+  "name": "unitegallery",
+  "version": "1.7.40",
+  "description": "Responsive jQuery Image and Video Gallery Plugin",
+  "license": "MIT",
+  "homepage": "http://unitegallery.net/",
+  "main": [
+    "dist/js/unitegallery.js"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.0"
+  },
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "package",
+    "source"
+  ],
+  "_release": "1.7.40",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.7.40",
+    "commit": "0d707700e24d219194d7e086db76551edc035624"
+  },
+  "_source": "https://github.com/vvvmax/unitegallery.git",
+  "_target": "~1.7.28",
+  "_originalSource": "unitegallery"
+}
