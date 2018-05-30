@@ -4,6 +4,8 @@
   "/assets/css/bootstrap.min.css": "/assets/css/bootstrap.min.css",
   "/assets/css/pages/sweet_alert.css": "/assets/css/pages/sweet_alert.css",
   "/assets/css/responsive.dataTables.css": "/assets/css/responsive.dataTables.css",
+  "/css/app.css": "/css/app.css",
+  "/js/app.js": "/js/app.js",
   "/assets/css/components.css": "/assets/css/components.css",
   "/assets/js/components.js": "/assets/js/components.js"
 }

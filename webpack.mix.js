@@ -689,5 +689,4 @@ mix.copyDirectory('resources/assets/frontend/images', 'public/images')
     .copy('resources/assets/frontend/js/jquery-1.12.3.min.js', 'public/js')
     .copy('resources/assets/frontend/js/bootstrap.min.js', 'public/js')
     .js('resources/assets/frontend/js/app.js', 'public/js')
-    .sass('resources/assets/frontend/sass/app.scss', 'public/css')
-    .version();
+    .sass('resources/assets/frontend/sass/app.scss', 'public/css');

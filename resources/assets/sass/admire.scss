@@ -1907,3 +1907,31 @@ table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:a
   display: flex;
   align-items: center;
 }
+
+span.checkbox{
+  font-size: 16px;
+}
+
+.wysihtml5-toolbar li:not(.dropdown) > a.btn{
+  line-height: 1.7;
+  display: none;
+}
+
+.hidden{
+  display: none !important;
+}
+
+.save-button{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-transform: uppercase;
+  z-index: 9999;
+  .button{
+    font-weight: 800;
+  }
+}
+
+.map-preview{
+  margin: 20px auto 0;
+}

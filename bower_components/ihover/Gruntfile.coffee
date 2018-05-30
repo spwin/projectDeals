@@ -256,7 +256,7 @@ module.exports = (grunt) ->
                     dest: "<%= yeoman.dist %>"
                     src: [
                         "fonts/**/*"
-                        "images/**/*"
+                        "/images/**/*"
                     ]
                 ]
             styles:

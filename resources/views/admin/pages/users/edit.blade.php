@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card">
-                        <div class="card-header bg-white">
+                        <div class="card-header">
                             Details
                         </div>
                         <div class="card-body row">
@@ -63,7 +63,7 @@
 
                 <div class="col-md-6">
                     <div class="card">
-                        <div class="card-header bg-white">
+                        <div class="card-header">
                             Image
                         </div>
                         <div class="card-body row">
@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="card">
-                        <div class="card-header bg-white">
+                        <div class="card-header">
                             Change Password
                         </div>
                         <div class="card-body row">

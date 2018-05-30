@@ -25,6 +25,7 @@ class UsersTableSeeder extends Seeder
             'role' => 'manager',
         ]);
 
-        factory(App\User::class, 30)->create();
+        factory(App\User::class, 100)->create();
+        factory(App\User::class, 50)->create(['role' => 'manager']);
     }
 }

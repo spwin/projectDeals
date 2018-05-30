@@ -586,9 +586,9 @@ a.vimeo:hover * {
 }
 
 .button-wrapper{
-	height: 100px;
-	width: 100px;
-	line-height: 100px;
+	height: 60px;
+	width: 60px;
+	line-height: 60px;
 }
 .button-pill>li>a {
 	border-radius: 200px;
@@ -605,6 +605,17 @@ a.vimeo:hover * {
 .button-primary:hover {
 	background-color: #4aaedc;
 	border-color: #4cb0f9;}
+
+.button-success {
+	background-color: #00bf86;
+	border-color: #00bf86;
+	color: #fff;
+}
+.button-success:focus,
+.button-success:hover {
+	background-color: #009466;
+	border-color: #009466;}
+
 .btn-label {
 	border-radius: 0 0 0 0;
 }

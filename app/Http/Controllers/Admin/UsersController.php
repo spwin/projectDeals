@@ -6,6 +6,7 @@ use App\File;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
@@ -87,7 +88,13 @@ class UsersController extends Controller
         $request->validate($rules);
 
         $user = $users->newQuery()->with('image')->findOrFail($id);
-        $user->fill($request->all());
+
+        if($request->get('password')) {
+            $user->fill($request->except('password'));
+            $user->fill(['password' => Hash::make($request->get('password'))]);
+        } else {
+            $user->fill($request->all());
+        }
         $user->save();
 
         if($request->file('image') && $request->file('image')->isValid()) {

@@ -14,8 +14,8 @@ class Deal extends Model
      * @var array
      */
     protected $fillable = [
-        'image_id', 'company_id', 'name', 'slug', 'description', 'price', 'rating', 'status', 'reward',
-        'seo', 'location', 'meta_data'
+        'image_id', 'company_id', 'name', 'slug', 'description', 'price', 'rating', 'status',
+        'seo', 'location', 'meta_data', 'link', 'terms_and_conditions', 'map_id', 'maps_link'
     ];
 
     protected $casts = [
@@ -30,6 +30,22 @@ class Deal extends Model
 
     public function image(){
         return $this->hasOne(File::class, 'id', 'image_id');
+    }
+
+    public function map(){
+        return $this->hasOne(File::class, 'id', 'map_id');
+    }
+
+    public function gallery(){
+        return $this->belongsToMany(File::class, 'deal_gallery')->withPivot('order');
+    }
+
+    public function listings(){
+        return $this->hasMany(Listing::class, 'deal_id', 'id');
+    }
+
+    public function reviews(){
+        return $this->belongsToMany(User::class, 'deal_reviews')->withPivot('review', 'rating', 'date');
     }
 
     public function getImage($size = null){

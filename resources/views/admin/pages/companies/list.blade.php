@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header bg-white">
+                    <div class="card-header">
                         <div class="pull-left">
                             <a class="btn btn-mint" href="{{ route('admin.companies.create') }}"><i class="fa fa-plus-square-o"></i> Add</a>
                         </div>

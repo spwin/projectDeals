@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'role', 'email', 'password', 'image_id'
+        'first_name', 'last_name', 'role', 'email', 'password', 'image_id', 'provider', 'provider_id'
     ];
 
     /**
@@ -40,6 +40,10 @@ class User extends Authenticatable
 
     public function image(){
         return $this->hasOne(File::class, 'id', 'image_id');
+    }
+
+    public function reviews(){
+        return $this->belongsToMany(Deal::class, 'deal_reviews')->withPivot('review', 'rating');
     }
 
     public function avatar($size = null){

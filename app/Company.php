@@ -17,8 +17,17 @@ class Company extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'phone', 'description', 'image_id', 'user_id'
+        'name', 'phone', 'description', 'image_id', 'user_id', 'slug', 'social', 'seo'
     ];
+
+    protected $casts = [
+        'social' => 'collection',
+        'seo' => 'collection'
+    ];
+
+    public function deals(){
+        return $this->hasMany(Deal::class, 'company_id', 'id');
+    }
 
     public function user(){
         return $this->hasOne(User::class, 'id','user_id');

@@ -76,7 +76,7 @@ z-index: 999999">
                             <div class="row m-t-15">
                                 <div class="col-lg-12">
                                     <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input form-control">
+                                        <input type="checkbox" name="remember" class="custom-control-input form-control">
                                         <span class="custom-control-label"></span>
                                         <a class="text-white">Keep me logged in</a>
                                     </label>

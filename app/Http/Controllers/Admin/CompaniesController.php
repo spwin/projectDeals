@@ -39,6 +39,7 @@ class CompaniesController extends Controller
     public function add(Request $request){
         $request->validate([
             'name' => 'required',
+            'phone' => 'required',
             'user_id' => 'required',
             'image' => 'sometimes|nullable|image|mimes:jpeg,png,jpg,gif'
         ]);
@@ -70,7 +71,8 @@ class CompaniesController extends Controller
 
     public function save($id, Request $request, Company $companies){
         $rules = [
-            'name' => 'required'
+            'name' => 'required',
+            'phone' => 'required'
         ];
 
         if($request->get('image')){

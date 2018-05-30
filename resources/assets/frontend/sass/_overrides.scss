@@ -1,0 +1,60 @@
+.embed-responsive-16by9{
+  padding-bottom: 55.835%;
+}
+
+.stores-area-v1 .store-name{
+  min-height: 58.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo i{
+  font-size: 50px;
+  line-height: 1;
+  float: left;
+  color: $main-color;
+}
+
+.row-masnory{
+  display: flex;
+  flex-wrap: wrap;
+  > .col-sm-6 {
+    display: flex;
+  }
+}
+
+.btn.btn-disabled{
+  background-color: #a8a8a8;
+  cursor: default;
+  &:hover, &:active, &:focus, &:visited{
+    background-color: #a8a8a8;
+    border-color: #a8a8a8;
+  }
+}
+
+a.friyay-countdown{
+  span.countdown{
+    font-family: $font-family-sans-serif;
+  }
+}
+
+#product_slider_nav{
+  background-color: $body-bg;
+}
+
+.has-error{
+  label.checkbox{
+    &:after{
+      border-color: #a94442;
+    }
+  }
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.relative{
+  position: relative;
+}

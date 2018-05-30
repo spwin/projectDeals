@@ -67,6 +67,13 @@
                     <span class="link-title menu_hide">&nbsp;Deals</span>
                 </a>
             </li>
+
+            <li {!! (request()->is('admin/listings*')? 'class="active"':"") !!}>
+                <a href="{{ route('admin.listings.list') }} ">
+                    <i class="fa fa-money"></i>
+                    <span class="link-title menu_hide">&nbsp;Listings</span>
+                </a>
+            </li>
         </ul>
         <!-- /#menu -->
     </div>
