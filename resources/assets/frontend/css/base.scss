@@ -100,7 +100,7 @@ a:visited {
   outline-offset: 0 !important;
 }
 a {
-  color: #314555;
+  color: $main-blue;
 }
 a:hover,
 a:focus {
@@ -2343,7 +2343,7 @@ label {
   color: $main-color !important;
 }
 .color-blue {
-  color: #314555 !important;
+  color: $main-blue !important;
 }
 .color-white {
   color: #fff !important;
@@ -2388,7 +2388,7 @@ label {
   color: $main-color !important;
 }
 .color-h-blue:hover {
-  color: #314555 !important;
+  color: $main-blue !important;
 }
 .color-h-white:hover {
   color: #fff !important;
@@ -2753,7 +2753,7 @@ label {
   background-color: $main-color !important;
 }
 .bg-blue {
-  background-color: #314555 !important;
+  background-color: $main-blue !important;
 }
 .bg-white {
   background-color: #fff !important;
@@ -2792,7 +2792,7 @@ label {
   background-color: $main-color !important;
 }
 .bg-h-blue:hover {
-  background-color: #314555 !important;
+  background-color: $main-blue !important;
 }
 .bg-h-white:hover {
   background-color: #fff !important;

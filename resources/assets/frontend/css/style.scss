@@ -635,6 +635,7 @@
 }
 .header-search .form-control:focus {
   border-color: #ddd;
+  border-right: 2px solid $main-color;
 }
 .header-cart,
 .header-wishlist {
@@ -677,7 +678,7 @@
   color: #fff;
 }
 .nav-menu > li > ul a {
-  color: #314555;
+  color: $main-blue;
 }
 .nav-menu-fixed > a,
 .nav-menu > li:hover > a,
@@ -685,7 +686,7 @@
   background-color: $main-color;
 }
 .nav-menu > li > ul a {
-  color: #314555;
+  color: $main-blue;
   background-color: #fff;
 }
 .nav-menu > li > ul li:hover > a,
@@ -829,7 +830,7 @@
   }
   .nav-menu li > a,
   .nav-menu li.active a {
-    color: #314555;
+    color: $main-blue;
     background-color: #fff;
   }
   .nav-menu li:hover > a,
@@ -923,7 +924,7 @@
 }
 .main-footer {
   text-align: center;
-  background: #1e2b35;
+  background: $main-blue-hover;
   height: 60px;
 }
 .main-footer p {
@@ -1714,7 +1715,7 @@
 }
 .entry .entry-date > h6 {
   font-size: 14px;
-  background: #314555;
+  background: $main-blue;
   border-radius: 0 0 3px 3px;
 }
 .entry-meta .icon {

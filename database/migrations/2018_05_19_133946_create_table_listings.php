@@ -23,8 +23,10 @@ class CreateTableListings extends Migration
             $table->boolean('valid')->default(0);
             $table->integer('views')->default(0);
             $table->integer('status')->default(0);
-            $table->string('reward')->nullable();
             $table->json('meta_data')->nullable();
+
+            $table->json('social')->nullable();
+
             $table->timestamps();
 
             $table->integer('deal_id')->unsigned()->nullable();

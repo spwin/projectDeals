@@ -6874,12 +6874,12 @@ a:visited {
 }
 
 a {
-  color: #314555;
+  color: #143350;
 }
 
 a:hover,
 a:focus {
-  color: #db8540;
+  color: #a81354;
   text-decoration: none;
 }
 
@@ -9341,11 +9341,11 @@ label {
 
 /* |––––––––––––––[ Text Styles ]––––––––––––––| */
 .color-green {
-  color: #f69c44 !important;
+  color: #df136f !important;
 }
 
 .color-blue {
-  color: #314555 !important;
+  color: #143350 !important;
 }
 
 .color-white {
@@ -9401,11 +9401,11 @@ label {
 }
 
 .color-h-green:hover {
-  color: #f69c44 !important;
+  color: #df136f !important;
 }
 
 .color-h-blue:hover {
-  color: #314555 !important;
+  color: #143350 !important;
 }
 
 .color-h-white:hover {
@@ -9828,11 +9828,11 @@ label {
 
 /* |––––––––––––––[ Background Colors ]––––––––––––––| */
 .bg-green {
-  background-color: #f69c44 !important;
+  background-color: #df136f !important;
 }
 
 .bg-blue {
-  background-color: #314555 !important;
+  background-color: #143350 !important;
 }
 
 .bg-white {
@@ -9880,11 +9880,11 @@ label {
 }
 
 .bg-h-green:hover {
-  background-color: #f69c44 !important;
+  background-color: #df136f !important;
 }
 
 .bg-h-blue:hover {
-  background-color: #314555 !important;
+  background-color: #143350 !important;
 }
 
 .bg-h-white:hover {
@@ -10753,7 +10753,7 @@ label {
 }
 
 .form-control:focus {
-  border-color: #f69c44;
+  border-color: #df136f;
   box-shadow: none !important;
 }
 
@@ -10941,18 +10941,18 @@ fieldset[disabled] .btn {
 
 /* |–––––––––––––[ Default Button ]––––––––––––| */
 .btn {
-  background-color: #f69c44;
+  background-color: #df136f;
   color: #fff;
 }
 
 .btn.btn-link,
 .btn.btn-o {
-  color: #f69c44;
+  color: #df136f;
   background-color: transparent;
 }
 
 .btn.btn-o {
-  border-color: #f69c44;
+  border-color: #df136f;
 }
 
 .btn:hover,
@@ -10962,8 +10962,8 @@ fieldset[disabled] .btn {
 .btn:active,
 .btn.active {
   color: #fff;
-  background-color: #db8540;
-  border-color: #db8540;
+  background-color: #a81354;
+  border-color: #a81354;
 }
 
 .btn.btn-link:hover,
@@ -10973,7 +10973,7 @@ fieldset[disabled] .btn {
 .btn.btn-link:active,
 .btn.btn-link.active {
   background-color: transparent !important;
-  color: #db8540;
+  color: #a81354;
 }
 
 .btn.btn-o:hover,
@@ -10982,7 +10982,7 @@ fieldset[disabled] .btn {
 .btn.btn-o.focus,
 .btn.btn-o:active,
 .btn.btn-o.active {
-  border-color: #db8540;
+  border-color: #a81354;
 }
 
 /* |––––––––––––––[ Orange Button ]––––––––––––––| */
@@ -11052,8 +11052,8 @@ fieldset[disabled] .btn {
 .btn.btn-gray:active,
 .btn.btn-gray.active {
   color: #fff;
-  background-color: #f69c44;
-  border-color: #f69c44;
+  background-color: #df136f;
+  border-color: #df136f;
 }
 
 .btn.btn-gray.btn-link:hover,
@@ -11062,7 +11062,7 @@ fieldset[disabled] .btn {
 .btn.btn-gray.btn-link.focus,
 .btn.btn-gray.btn-link:active,
 .btn.btn-gray.btn-link.active {
-  color: #f69c44;
+  color: #df136f;
 }
 
 .btn.btn-gray.btn-o:hover,
@@ -11071,12 +11071,12 @@ fieldset[disabled] .btn {
 .btn.btn-gray.btn-o.focus,
 .btn.btn-gray.btn-o:active,
 .btn.btn-gray.btn-o.active {
-  border-color: #f69c44;
+  border-color: #df136f;
 }
 
 .btn.btn-rev {
   background-color: #fff;
-  color: #f69c44;
+  color: #df136f;
 }
 
 .btn.btn-rev.btn-link,
@@ -11095,7 +11095,7 @@ fieldset[disabled] .btn {
 .btn.btn-rev.focus,
 .btn.btn-rev:active,
 .btn.btn-rev.active {
-  color: #f69c44;
+  color: #df136f;
   background-color: #fff;
   border-color: #fff;
 }
@@ -11658,7 +11658,7 @@ fieldset[disabled] .btn {
   position: relative;
   font-size: 15px;
   background-color: #e6fff1;
-  border-left-color: #f69c44;
+  border-left-color: #df136f;
   margin: 20px 0 30px 20px;
   padding: 30px 30px 40px 30px;
 }
@@ -11666,7 +11666,7 @@ fieldset[disabled] .btn {
 .block-quote:after {
   font-size: 20px;
   bottom: 10px;
-  color: #f69c44;
+  color: #df136f;
   content: "\f10e";
   font-family: fontawesome;
   position: absolute;
@@ -11762,8 +11762,8 @@ fieldset[disabled] .btn {
 
 .custom-checkbox input[type="checkbox"]:checked + label::after,
 .custom-radio input[type="radio"]:checked + label::after {
-  border-color: #f69c44;
-  background-color: #f69c44;
+  border-color: #df136f;
+  background-color: #df136f;
 }
 
 .custom-checkbox input[type="checkbox"]:checked + label::before,
@@ -11799,7 +11799,7 @@ fieldset[disabled] .btn {
   bottom: 0px;
   width: 40px;
   height: 2px;
-  background: #f69c44;
+  background: #df136f;
 }
 
 /* Alert Error */
@@ -11923,7 +11923,7 @@ fieldset[disabled] .btn {
 }
 
 .label-success {
-  background-color: #f69c44;
+  background-color: #df136f;
 }
 
 .panel {
@@ -11982,8 +11982,8 @@ fieldset[disabled] .btn {
 
 .page-pagination .page-numbers.current,
 .page-pagination a.page-numbers:hover {
-  border-color: #f69c44;
-  background-color: #f69c44;
+  border-color: #df136f;
+  background-color: #df136f;
   color: #fff;
 }
 
@@ -12054,7 +12054,7 @@ fieldset[disabled] .btn {
 .nav-tabs > li.active > a:focus {
   border: 0;
   box-shadow: none;
-  color: #f69c44;
+  color: #df136f;
 }
 
 .nav-tabs > li > a {
@@ -12152,7 +12152,7 @@ fieldset[disabled] .btn {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #f69c44;
+  background-color: #df136f;
   animation: loaderAnim 2.4s infinite linear both;
   transform-origin: 100% 100%;
 }
@@ -12274,7 +12274,7 @@ fieldset[disabled] .btn {
 .nav-top .fa {
   margin-right: 6px;
   font-size: 14px;
-  color: #f69c44;
+  color: #df136f;
 }
 
 /* |–––––––––––––––––[ Header Header ]–––––––––––––––| */
@@ -12304,6 +12304,7 @@ fieldset[disabled] .btn {
 
 .header-search .form-control:focus {
   border-color: #ddd;
+  border-right: 2px solid #df136f;
 }
 
 .header-cart,
@@ -12351,23 +12352,23 @@ fieldset[disabled] .btn {
 }
 
 .nav-menu > li > ul a {
-  color: #314555;
+  color: #143350;
 }
 
 .nav-menu-fixed > a,
 .nav-menu > li:hover > a,
 .nav-menu > li.active > a {
-  background-color: #f69c44;
+  background-color: #df136f;
 }
 
 .nav-menu > li > ul a {
-  color: #314555;
+  color: #143350;
   background-color: #fff;
 }
 
 .nav-menu > li > ul li:hover > a,
 .nav-menu > li > ul li.active > a {
-  color: #f69c44;
+  color: #df136f;
   background-color: #f1f1f1;
 }
 
@@ -12535,12 +12536,12 @@ fieldset[disabled] .btn {
   }
   .nav-menu li > a,
   .nav-menu li.active a {
-    color: #314555;
+    color: #143350;
     background-color: #fff;
   }
   .nav-menu li:hover > a,
   .nav-menu li.active-mobile > a {
-    color: #f69c44;
+    color: #df136f;
     background-color: #f1f1f1;
   }
   .nav-header {
@@ -12603,7 +12604,7 @@ fieldset[disabled] .btn {
 
 .footer-top-area .twitter-list a,
 .footer-top-area .twitter-list .ico {
-  color: #f69c44;
+  color: #df136f;
 }
 
 .footer-top-area .twitter-list .ico {
@@ -12630,12 +12631,12 @@ fieldset[disabled] .btn {
   top: 0;
   height: inherit;
   line-height: inherit;
-  color: #f69c44;
+  color: #df136f;
 }
 
 .main-footer {
   text-align: center;
-  background: #1e2b35;
+  background: #0a1e2d;
   height: 60px;
 }
 
@@ -12725,7 +12726,7 @@ fieldset[disabled] .btn {
   font-size: 15px;
   width: 40px;
   margin-right: 20px;
-  color: #f69c44;
+  color: #df136f;
   border-right: 1px solid #ddd;
   text-align: center;
 }
@@ -12746,7 +12747,7 @@ fieldset[disabled] .btn {
 .nav-coupon-category li a:hover > span {
   margin-left: 10px;
   color: #fff;
-  background-color: #f69c44;
+  background-color: #df136f;
 }
 
 .nav-coupon-category li + li {
@@ -12754,7 +12755,7 @@ fieldset[disabled] .btn {
 }
 
 .price {
-  color: #f69c44;
+  color: #df136f;
   margin-bottom: 0;
 }
 
@@ -12856,7 +12857,7 @@ fieldset[disabled] .btn {
   position: absolute;
   right: -48px;
   top: 35px;
-  background-color: #f69c44;
+  background-color: #df136f;
   white-space: nowrap;
   display: block;
   padding: 0 5px;
@@ -12874,7 +12875,7 @@ fieldset[disabled] .btn {
   z-index: 2;
   width: 0;
   border-width: 7px;
-  border-bottom-color: #f69c44;
+  border-bottom-color: #df136f;
 }
 
 .deal-actions li .share-tooltip a {
@@ -12949,7 +12950,7 @@ fieldset[disabled] .btn {
 }
 
 .stores-area-v2 .stores-cat .stores-cat-header {
-  color: #f69c44;
+  color: #df136f;
   padding: 0 30px;
   line-height: 48px;
   margin: 0px;
@@ -13068,7 +13069,7 @@ fieldset[disabled] .btn {
 
 .coupon-showen .coupon-hide {
   text-align: center;
-  border: 2px dashed #f69c44;
+  border: 2px dashed #df136f;
   line-height: 28px;
 }
 
@@ -13119,7 +13120,7 @@ fieldset[disabled] .btn {
 }
 
 .newsletter-form .form-control {
-  border-color: #f69c44;
+  border-color: #df136f;
 }
 
 /* ––––––––––––––––––––––––––––––––––––––––––––– */
@@ -13272,14 +13273,14 @@ fieldset[disabled] .btn {
   text-align: center;
   line-height: 42px;
   color: white;
-  background-color: #f69c44;
+  background-color: #df136f;
   border-radius: 3px;
   border: 2px solid #fff;
-  box-shadow: 0 0 0 2px #f69c44;
+  box-shadow: 0 0 0 2px #df136f;
 }
 
 .contact-area-v1 {
-  border-top: 4px solid #f69c44;
+  border-top: 4px solid #df136f;
 }
 
 /* ––––––––––––––––––––––––––––––––––––––––––––– */
@@ -13311,7 +13312,7 @@ fieldset[disabled] .btn {
 .faq-area .panel-title > a {
   display: block;
   padding: 15px;
-  background-color: #f69c44;
+  background-color: #df136f;
   color: #fff;
   transition: all 0s linear;
 }
@@ -13409,7 +13410,7 @@ fieldset[disabled] .btn {
 }
 
 .cart-list .sub-total {
-  color: #f69c44;
+  color: #df136f;
 }
 
 .cart-list i.fa-trash-o {
@@ -13453,7 +13454,7 @@ fieldset[disabled] .btn {
 }
 
 .cart-price ul li .price span {
-  color: #f69c44;
+  color: #df136f;
   font-size: 15px;
 }
 
@@ -13531,7 +13532,7 @@ fieldset[disabled] .btn {
 .entry .entry-date > h6 {
   color: #fcfcfc;
   font-size: 22px;
-  background: #f69c44;
+  background: #df136f;
   text-align: center;
   padding: 5px;
   border-radius: 3px 3px 0 0;
@@ -13540,7 +13541,7 @@ fieldset[disabled] .btn {
 
 .entry .entry-date > h6 {
   font-size: 14px;
-  background: #314555;
+  background: #143350;
   border-radius: 0 0 3px 3px;
 }
 
@@ -13555,7 +13556,7 @@ fieldset[disabled] .btn {
 }
 
 .entry-meta a:hover {
-  color: #f69c44;
+  color: #df136f;
 }
 
 .entry .soundcloud-embed iframe {
@@ -13622,7 +13623,7 @@ fieldset[disabled] .btn {
 }
 
 .blog-post-tags a:hover {
-  color: #f69c44;
+  color: #df136f;
 }
 
 .blog-post-tags li + li {
@@ -13884,7 +13885,7 @@ fieldset[disabled] .btn {
 
 .tags .badge:hover {
   color: #fff;
-  background-color: #f69c44;
+  background-color: #df136f;
 }
 
 /* Instagram Widget */
@@ -13895,11 +13896,11 @@ fieldset[disabled] .btn {
 
 /* Twitter Widget */
 .twitter-list__item a {
-  color: #f69c44;
+  color: #df136f;
 }
 
 .twitter-list__item .twitter-icon {
-  color: #f69c44;
+  color: #df136f;
   font-size: 18px;
   margin-right: 6px;
 }
@@ -13932,7 +13933,7 @@ fieldset[disabled] .btn {
   font-size: 50px;
   line-height: 1;
   float: left;
-  color: #f69c44;
+  color: #df136f;
 }
 
 .row-masnory {
@@ -13993,5 +13994,5 @@ ul.company-details li {
 
 ul.company-details li i {
   width: 20px;
-  color: #f69c44;
+  color: #df136f;
 }

@@ -218,18 +218,6 @@
                                                         <input type="password" class="form-control input-lg" name="password" placeholder="Password">
                                                         @if($errors->has('password'))<span class="text-danger">{{ $errors->first('password') }}</span>@endif
                                                     </div>
-                                                    <div class="mb-20">
-                                                        <a href="{{ route('social.login', ['provider' => 'facebook']) }}" class="btn btn-lg btn-block btn-social btn-facebook"><i class="fa fa-facebook-square"></i>Sign In with Facebook</a>
-                                                    </div>
-                                                    <div class="mb-20">
-                                                        <a class="btn btn-lg btn-block btn-social btn-twitter"><i class="fa fa-twitter"></i>Sign In with Twitter</a>
-                                                    </div>
-                                                    <div class="mb-20">
-                                                        <a class="btn btn-lg btn-block btn-social btn-google-plus"><i class="fa fa-google-plus"></i>Sign In with Google</a>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <a href="#" class="forgot-pass-link color-green">Forget Youe Password ?</a>
-                                                    </div>
                                                     <div class="custom-checkbox mb-20">
                                                         <input type="checkbox" name="remember" id="remember_account" checked>
                                                         <label class="color-mid" for="remember_account">Keep me signed in on this computer.</label>

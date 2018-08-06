@@ -154,7 +154,7 @@
     <!-- Coutdown -->
     <script type="text/javascript" src="{{ asset('vendors/countdown/jquery.countdown.js') }}"></script>
 
-    <script>
+    {{--<script>
         window.fbAsyncInit = function() {
             FB.init({
                 appId      : '{{ env('FACEBOOK_ID') }}',
@@ -174,7 +174,7 @@
             js.src = "https://connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-    </script>
+    </script>--}}
 
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- Custom Template JavaScript                -->

@@ -119,27 +119,38 @@ $factory->define(App\Category::class, function(Faker\Generator $faker) {
 
 $factory->define(App\Listing::class, function (Faker\Generator $faker) {
     $deals = Deal::all();
-    $rewards = collect(['', 'any'] + rewards());
     $status = rand(0, 4);
+    $weeks = rand(1, 10);
+
+    $friyayTime = friyayTime();
+    if($status == 3){
+        $startsAt = addWeeks($friyayTime, -1);
+        $endsAt = $friyayTime;
+    } elseif($status == 4){
+        $startsAt = addWeeks($friyayTime, rand(-7, -2));
+        $endsAt = addWeeks($startsAt, 1);
+    } else {
+        $startsAt = addWeeks($friyayTime, rand(0,3));
+        $endsAt = addWeeks($startsAt, $weeks);
+    }
 
     $return = [
         'deal_id' => $deals->random(),
-        'weeks' => rand(1, 10),
+        'weeks' => $weeks,
         'passed' => rand(0, 1),
         'coupons_count' => rand(1, 100),
-        'starts_at' => $faker->date('Y-m-d H:i:s'),
-        'ends_at' => $faker->date('Y-m-d H:i:s'),
+        'starts_at' => date('Y-m-d H:i:s', $startsAt),
+        'ends_at' => date('Y-m-d H:i:s', $endsAt),
         'valid' => $status == 3 ? 1 : 0,
         'views' => rand(0, 2000000),
         'status' => $status,
-        'reward' => $rewards->random(1),
-        'best_deals' => rand(0, rand(0, rand(0,1))),
-        'category_featured' => rand(0, rand(0, rand(0,1))),
-        'follow_link' => rand(0, rand(0, rand(0,1))),
-        'newsletter' => rand(0, rand(0, rand(0,1))),
+        'best_deals' => booleanRandom(3),
+        'category_featured' => booleanRandom(3),
+        'follow_link' => booleanRandom(3),
+        'newsletter' => booleanRandom(3),
     ];
 
-    $slider_image = rand(0, rand(0, rand(0,1)));
+    $slider_image = booleanRandom(3);
     if($slider_image && $image = randomImg()){
         $slider_image_file = new File();
         $slider_image_file->saveFile('listings_sliders', $image);
@@ -147,7 +158,7 @@ $factory->define(App\Listing::class, function (Faker\Generator $faker) {
         $return['slider_image_id'] = $slider_image_file->getAttribute('id');
     }
 
-    $menu_image = rand(0, rand(0, rand(0,1)));
+    $menu_image = booleanRandom(3);
     if($menu_image && $image = randomImg()){
         $menu_image_file = new File();
         $menu_image_file->saveFile('listings_menu', $image);

@@ -20,15 +20,6 @@ function manager($field = null){
     return currentUser('manager', $field);
 }
 
-function rewards(){
-    return [
-        'facebook' => 'Facebook',
-        'twitter' => 'Twitter',
-        'instagram' => 'Instagram',
-        'pinterest' => 'Pinterest'
-    ];
-}
-
 function listingStatuses(){
     return [
         0 => 'draft',
@@ -94,6 +85,11 @@ function friyayTime($format = null){
     }
 
     return $friyay;
+}
+
+function addWeeks($from, $weeks){
+    $week = 60 * 60 * 24 * 7;
+    return $week * $weeks + $from;
 }
 
 function friyayTimeUnitsLeft($friyay = null){
@@ -168,4 +164,13 @@ function cleanUrl($url){
     $url = trim($url, '/');
     $parts = explode('/', $url);
     return $parts[0];
+}
+
+function booleanRandom($deepness = 0){
+    $deepness--;
+    if($deepness > 0){
+        return rand(0, booleanRandom($deepness));
+    } else {
+        return rand(0, 1);
+    }
 }

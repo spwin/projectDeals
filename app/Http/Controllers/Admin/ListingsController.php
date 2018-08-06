@@ -47,9 +47,10 @@ class ListingsController extends Controller
         $listing = new Listing();
         $listing->fill($request->all());
 
+        $friyayTime = friyayTime();
         $listing->fill([
-            'starts_at' => date('Y-m-d H:i:s', strtotime('next friday')),
-            'ends_at' => date('Y-m-d H:i:s', strtotime('next friday + '.$request->get('weeks').' weeks'))
+            'starts_at' => date('Y-m-d H:i:s', $friyayTime),
+            'ends_at' => date('Y-m-d H:i:s', addWeeks($friyayTime, $request->get('weeks')))
         ]);
         $listing->save();
 

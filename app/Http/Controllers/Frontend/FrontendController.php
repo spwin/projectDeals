@@ -10,8 +10,11 @@ class FrontendController extends Controller
 {
     public function homepage(Category $categories){
         return view('frontend.pages.homepage')->with([
-            'categories' => $categories->newQuery()->with('listings')->get()
+            'categories' => $categories->withCount(['listings' => function ($query) {
+                $query->where('valid', true);
+            }])->get()
         ]);
+
     }
 
     public function static($view){

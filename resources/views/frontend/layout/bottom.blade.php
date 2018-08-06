@@ -5,7 +5,7 @@
                 <div class="row row-tb-20">
                     <div class="footer-col col-sm-6">
                         <div class="footer-about">
-                            <img class="mb-40" src="/images/logo_light.png" width="250" alt="">
+                            <img class="mb-40" src="{{ asset('/images/logo_light.png') }}" width="120" alt="">
                             <p class="color-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam dolores quidem mollitia id ipsa nisi necessitatibus iure repudiandae aperiam, odit ipsam dolor fugiat corporis nesciunt illo nemo minus.</p>
                         </div>
                     </div>

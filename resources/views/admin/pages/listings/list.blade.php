@@ -50,6 +50,7 @@
                                     <th>Deal</th>
                                     <th>Premium</th>
                                     <th>Status</th>
+                                    <th>Valid</th>
                                     <th></th>
                                 </tr>
                                 </thead>
@@ -64,6 +65,7 @@
                                             {{ $listing->getRelation('menuImage') ? 'menu' : '' }}
                                         </td>
                                         <td>{{ listingStatuses()[$listing->getAttribute('status')] }}</td>
+                                        <td><span class="status-label mt-2 {{ $listing->getAttribute('valid') ? 'green' : 'red' }}"></span></td>
                                         <td>
                                             <a href="{{ route('admin.listings.edit', ['id' => $listing->getAttribute('id')]) }}" class="text-primary m-2">
                                                 <span class="fa fa-pencil"></span>

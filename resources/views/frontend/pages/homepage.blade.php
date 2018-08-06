@@ -14,7 +14,7 @@
                                         <a href="#">
                                             <i class="fa {{ $category->getAttribute('icon') }}"></i>
                                             {{ $category->getAttribute('name') }}
-                                            <span>{{ $category->getRelation('listings')->count() }}</span>
+                                            <span>{{ $category->getAttribute('listings_count') }}</span>
                                         </a>
                                     </li>
                                 @endforeach

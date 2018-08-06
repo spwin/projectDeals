@@ -1935,3 +1935,16 @@ span.checkbox{
 .map-preview{
   margin: 20px auto 0;
 }
+
+span.status-label{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+  &.green{
+    background-color: green;
+  }
+  &.red{
+    border: 1px solid gray;
+  }
+}

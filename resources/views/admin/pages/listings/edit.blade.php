@@ -68,19 +68,6 @@
                                     <small class="help-block">{{ $errors->first('coupons_count') }}</small>
                                 @endif
                             </div>
-                            <div class="col-lg-12 input_field_sections @if($errors->has('reward')) has-danger @endif">
-                                <label for="reward">Reward</label>
-                                <select class="form-control" id="reward" name="reward">
-                                    <option value="">None</option>
-                                    <option value="any" @if(old('reward', $listing->getAttribute('reward')) == 'any') selected @endif>Any</option>
-                                    @foreach(rewards() as $slug => $title)
-                                        <option value="{{ $slug }}" @if(old('reward', $listing->getAttribute('reward')) == $slug) selected @endif>{{ $title }}</option>
-                                    @endforeach
-                                </select>
-                                @if($errors->has('reward'))
-                                    <small class="help-block">{{ $errors->first('reward') }}</small>
-                                @endif
-                            </div>
                             <div class="col-lg-12 input_field_sections @if($errors->has('status')) has-danger @endif">
                                 <label for="status">Status</label>
                                 <select class="form-control" id="status" name="status">
@@ -88,10 +75,14 @@
                                         <option value="{{ $id }}" @if(old('status', $listing->getAttribute('status')) == $id) selected @endif>{{ $status}}</option>
                                     @endforeach
                                 </select>
-                                @if($errors->has('reward'))
-                                    <small class="help-block">{{ $errors->first('reward') }}</small>
+                                @if($errors->has('status'))
+                                    <small class="help-block">{{ $errors->first('status') }}</small>
                                 @endif
                             </div>
+                            <label class="custom-control mt-4">
+                                <input type="checkbox" name="valid" value="1" @if(old('valid', $listing->getAttribute('valid'))) checked @endif>
+                                <span class="checkbox">Valid listing (display on frontend)</span>
+                            </label>
                         </div>
                         <div class="card-footer">
                             <div class="pull-right">

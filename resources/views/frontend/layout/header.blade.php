@@ -43,13 +43,12 @@
     <div class="header-header bg-white">
         <div class="container">
             <div class="row row-rl-0 row-tb-20 row-md-cell">
-                <div class="brand col-md-4 t-xs-center t-md-left valign-middle">
+                <div class="brand col-md-3 t-xs-center t-md-left valign-middle">
                     <a href="{{ route('homepage') }}" class="logo">
-                        <i class="fa fa-ticket"></i>
-                        <img src="/images/logo.png" alt="" width="170">
+                        <img src="{{ asset('/images/logo.svg') }}" alt="" width="100">
                     </a>
                 </div>
-                <div class="header-search col-md-8">
+                <div class="header-search col-md-9">
                     <div class="row row-tb-10 ">
                         <div class="col-sm-9">
                             <form class="search-form">
