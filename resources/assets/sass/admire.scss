@@ -128,8 +128,9 @@ button,.btn{
 /* 2.1 Top bar */
 
 .admin_img {
-  width: 45px;
-  height: 30px;
+    width: 34px;
+    height: 34px;
+    margin-right: 10px;
   margin-top: -10px; }
 
 .admin_img2 {
@@ -456,7 +457,8 @@ button,.btn{
 }
 
 .left_media {
-  background-image: url('/assets/img/camomile.jpg');
+    background: url('/assets/img/camomile.jpg') no-repeat center;
+    background-size: contain;
 }
 .user-media .user-link {
   display: block;

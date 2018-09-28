@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'role', 'email', 'password', 'image_id', 'provider', 'provider_id'
+        'first_name', 'last_name', 'role', 'email', 'password', 'image_id', 'confirmed', 'google2fa_secret', 'google2fa_ts'
     ];
 
     /**
@@ -27,8 +27,30 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'google2fa_secret'
     ];
+
+    /**
+     * Ecrypt the user's google_2fa secret.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function setGoogle2faSecretAttribute($value)
+    {
+        $this->attributes['google2fa_secret'] = encrypt($value);
+    }
+
+    /**
+     * Decrypt the user's google_2fa secret.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getGoogle2faSecretAttribute($value)
+    {
+        return decrypt($value);
+    }
 
     public function company(){
         $company = null;
@@ -44,6 +66,10 @@ class User extends Authenticatable
 
     public function reviews(){
         return $this->belongsToMany(Deal::class, 'deal_reviews')->withPivot('review', 'rating');
+    }
+
+    public function participating(){
+        return $this->belongsToMany(Listing::class, 'participation')->withPivot('winner');
     }
 
     public function avatar($size = null){

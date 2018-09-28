@@ -61,5 +61,6 @@ class Kernel extends HttpKernel
         'role' => \App\Http\Middleware\RoleMiddleware::class,
         'not' => \App\Http\Middleware\NotMiddleware::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        '2fa' => \App\Http\Middleware\OTPMiddleware::class,
     ];
 }

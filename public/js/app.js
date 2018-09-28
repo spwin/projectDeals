@@ -465,7 +465,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 $(this).html(e.strftime(format));
             });
         }).on('finish.countdown', function (e) {
-            $(this).html('This offer ha expired!').addClass('disabled');
+            $(this).html("It's Friyay time!").addClass('disabled');
         });
     };
 

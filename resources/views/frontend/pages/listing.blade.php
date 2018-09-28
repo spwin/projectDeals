@@ -175,34 +175,41 @@
                                                 Participation
                                             </h2>
                                             <ul class="deal-meta list-inline mb-20 color-mid">
-                                                <li><i class="ico fa fa-users mr-10"></i>{{ rand(10, 1000) }} Users</li>
+                                                <li><i class="ico fa fa-users mr-10"></i>{{ $listing->participants()->count() }} Users</li>
                                                 <li><i class="ico fa fa-ticket mr-10"></i>{{ $listing->getAttribute('coupons_count') }} Coupons</li>
                                             </ul>
                                             @auth('user')
-                                                <ul class="list-inline social-icons social-icons--colored t-center mt-20 mb-40">
-                                                    <li class="social-icons__item">
-                                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                                    </li>
-                                                    <li class="social-icons__item">
-                                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                                    </li>
-                                                    <li class="social-icons__item">
-                                                        <a href="#"><i class="fa fa-pinterest"></i></a>
-                                                    </li>
-                                                    <li class="social-icons__item">
-                                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                    </li>
-                                                    <li class="social-icons__item">
-                                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                                    </li>
-                                                </ul>
-                                                <p class="color-muted mb-40">
+                                                {{--<ul class="list-inline social-icons social-icons--colored t-center mt-20 mb-40">--}}
+                                                    {{--<li class="social-icons__item">--}}
+                                                        {{--<a href="#"><i class="fa fa-facebook"></i></a>--}}
+                                                    {{--</li>--}}
+                                                    {{--<li class="social-icons__item">--}}
+                                                        {{--<a href="#"><i class="fa fa-twitter"></i></a>--}}
+                                                    {{--</li>--}}
+                                                    {{--<li class="social-icons__item">--}}
+                                                        {{--<a href="#"><i class="fa fa-pinterest"></i></a>--}}
+                                                    {{--</li>--}}
+                                                    {{--<li class="social-icons__item">--}}
+                                                        {{--<a href="#"><i class="fa fa-linkedin"></i></a>--}}
+                                                    {{--</li>--}}
+                                                    {{--<li class="social-icons__item">--}}
+                                                        {{--<a href="#"><i class="fa fa-google-plus"></i></a>--}}
+                                                    {{--</li>--}}
+                                                {{--</ul>--}}
+                                                {{--<p class="color-muted mb-40">
                                                     Please choose a platform to share this deal using one of the button above in order to enter this participation.
-                                                </p>
+                                                </p>--}}
                                                 <div class="buy-now">
-                                                    <a href="#" target="_blank" class="btn btn-block btn-disabled btn-lg">
-                                                        <i class="fa fa-shopping-cart font-16 mr-10"></i> Participate
-                                                    </a>
+                                                    @if($listing->participants()->where('user_id', auth('user')->id())->get()->count() > 0)
+                                                        <p>Participating!</p>
+                                                    @else
+                                                        <form method="post" action="{{ route('listing.participate', ['id' => $listing->getAttribute('id')]) }}">
+                                                            {{ csrf_field() }}
+                                                            <button type="submit" class="btn btn-block btn-lg">
+                                                                <i class="fa fa-shopping-cart font-16 mr-10"></i> Participate
+                                                            </button>
+                                                        </form>
+                                                    @endif
                                                 </div>
                                             @else
                                                 <h3 class="widget-title h-title">Sign In <small>Or <a href="{{ route('user.register.form') }}" class="color-green">Sign Up</a></small></h3>

@@ -21,8 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('role')->default('user');
             $table->boolean('confirmed')->default(false);
-            $table->string('provider')->nullable();
-            $table->string('provider_id')->nullable();
+            $table->boolean('active')->default(true);
+            $table->text('google2fa_secret')->nullable();
+            $table->integer('google2fa_ts')->nullable();
             $table->rememberToken();
             $table->timestamps();
 

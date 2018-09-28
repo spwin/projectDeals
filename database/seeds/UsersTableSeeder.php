@@ -25,7 +25,14 @@ class UsersTableSeeder extends Seeder
             'role' => 'manager',
         ]);
 
-        factory(App\User::class, 100)->create();
+        factory(App\User::class)->create([
+            'email' => 'stanislav.markevic@gmail.com',
+            'password' => bcrypt('spwin0411'),
+            'role' => 'user',
+            'confirmed' => true,
+        ]);
+
+        factory(App\User::class, 200)->create();
         factory(App\User::class, 50)->create(['role' => 'manager']);
     }
 }

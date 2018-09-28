@@ -53,7 +53,7 @@
                         <div class="col-sm-9">
                             <form class="search-form">
                                 <div class="input-group">
-                                    <input type="text" class="form-control input-lg search-input" placeholder="Enter Keywork Here ..." required="required">
+                                    <input type="text" class="form-control input-lg search-input" placeholder="Enter Keyword Here ..." required="required">
                                     <div class="input-group-btn">
                                         <div class="input-group">
                                             <div class="input-group-btn">

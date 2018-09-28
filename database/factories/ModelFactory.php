@@ -16,9 +16,12 @@
 use App\Category;
 use App\Company;
 use App\Deal;
+use App\Enums\ListingStatus;
 use App\File;
 use App\Listing;
+use App\Rotation;
 use App\User;
+use Illuminate\Support\Carbon;
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
@@ -28,6 +31,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'last_name' => $faker->lastName,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
+        'confirmed' => rand(0, 1),
         'role' => 'user',
         'remember_token' => str_random(10),
     ];
@@ -123,10 +127,10 @@ $factory->define(App\Listing::class, function (Faker\Generator $faker) {
     $weeks = rand(1, 10);
 
     $friyayTime = friyayTime();
-    if($status == 3){
+    if($status == ListingStatus::LIVE){
         $startsAt = addWeeks($friyayTime, -1);
         $endsAt = $friyayTime;
-    } elseif($status == 4){
+    } elseif($status == ListingStatus::ENDED){
         $startsAt = addWeeks($friyayTime, rand(-7, -2));
         $endsAt = addWeeks($startsAt, 1);
     } else {
@@ -138,10 +142,10 @@ $factory->define(App\Listing::class, function (Faker\Generator $faker) {
         'deal_id' => $deals->random(),
         'weeks' => $weeks,
         'passed' => rand(0, 1),
-        'coupons_count' => rand(1, 100),
+        'coupons_count' => rand(1, 10),
         'starts_at' => date('Y-m-d H:i:s', $startsAt),
         'ends_at' => date('Y-m-d H:i:s', $endsAt),
-        'valid' => $status == 3 ? 1 : 0,
+        'valid' => $status == ListingStatus::LIVE ? 1 : 0,
         'views' => rand(0, 2000000),
         'status' => $status,
         'best_deals' => booleanRandom(3),
@@ -175,5 +179,22 @@ $factory->define(App\ListingCategory::class, function(Faker\Generator $faker) {
     return [
         'listing_id' => $listings->random(),
         'category_id' => $categories->random()
+    ];
+});
+
+$factory->define(App\Participation::class, function(Faker\Generator $faker) {
+    $listings = Listing::all();
+    $users = User::all();
+    $rotation = Rotation::where(['active' => true])->first();
+    return [
+        'listing_id' => $listings->random(),
+        'user_id' => $users->random(),
+        'rotation_id' => $rotation->getAttribute('id'),
+    ];
+});
+
+$factory->define(App\Rotation::class, function(Faker\Generator $faker) {
+    return [
+        'started_at' => Carbon::now()
     ];
 });

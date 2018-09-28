@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ListingsTableSeeder extends Seeder
+class RotationTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class ListingsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Listing::class, 500)->create();
+        factory(App\Rotation::class, 1)->create();
     }
 }

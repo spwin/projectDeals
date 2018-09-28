@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        date_default_timezone_set(env('TIMEZONE'));
+        date_default_timezone_set(env('APP_TIMEZONE'));
 
         try {
             if (Schema::hasTable('listings')) {

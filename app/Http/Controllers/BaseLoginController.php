@@ -5,11 +5,8 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
-use Laravel\Socialite\Facades\Socialite;
 
 class BaseLoginController extends Controller
 {
@@ -78,7 +75,7 @@ class BaseLoginController extends Controller
 
         if ($this->hasTooManyLoginAttempts($request)) {
             $this->fireLockoutEvent($request);
-            return $this->sendLockoutResponse($request);
+            $this->sendLockoutResponse($request);
         }
 
         if ($this->attemptLogin($request)) {

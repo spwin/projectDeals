@@ -25,6 +25,10 @@ class CreateTableListings extends Migration
             $table->integer('status')->default(0);
             $table->json('meta_data')->nullable();
 
+            $table->string('facebook_id')->nullable();
+            $table->string('twitter_id')->nullable();
+            $table->string('instagram_id')->nullable();
+
             $table->json('social')->nullable();
 
             $table->timestamps();

@@ -74,17 +74,18 @@ Route::namespace('Frontend')->domain(env('FRONTEND_DOMAIN'))->group(function(){
     Route::get('/listings/{id}/{slug}', 'ListingController@index')->name('listing');
     Route::get('/company/{id}/{slug}', 'CompanyController@view')->name('company');
 
-    // Rating
-    Route::post('/listing/{id}/rate', 'DealController@rate')->name('deal.rate');
-
-    // User
-    Route::get('/user', 'UserController@index')->name('user');
-
-    // Socialite
-    Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider')->name('social.login');
-    Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('social.callback');
-
     Route::middleware('role:user')->group(function () {
+        // Listing
+        Route::post('/listing/{id}/participate', 'ListingController@participate')->name('listing.participate');
+
+        // Rating
+        Route::post('/listing/{id}/rate', 'DealController@rate')->name('deal.rate');
+
+        // User
+        Route::get('/user', 'UserController@index')->name('user');
+
+//        Route::get('/login/2fa', 'UserController@twoFactorLogin')->name('user.login.2fa');
+//        Route::post('/login/2fa', 'UserController@twoFactorProcess')->name('user.login.2fa.process');
         Route::get('/logout', 'Auth\LoginController@logout')->name('user.logout');
     });
     Route::middleware('not:user')->group(function() {
@@ -97,6 +98,3 @@ Route::namespace('Frontend')->domain(env('FRONTEND_DOMAIN'))->group(function(){
 
     Route::get('/{view}', 'FrontendController@static')->name('static');
 });
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

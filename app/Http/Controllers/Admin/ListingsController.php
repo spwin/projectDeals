@@ -20,7 +20,10 @@ class ListingsController extends Controller
                     $query->where('name', 'like', "%{$search}%");
                 })->orWhereHas('deal.company', function ($query) use ($search) {
                     $query->where('name', 'like', "%{$search}%");
-            });;
+            });
+            if(is_numeric($search)){
+                $listings->orWhere('listings.id', '=', $search);
+            }
         }
         $listings = $listings->orderByDesc('id')->paginate($this->paginate);
 

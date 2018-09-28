@@ -84,7 +84,7 @@ return [
         'local' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['default'],
+                'queue' => ['award', 'publish', 'default'],
                 'balance' => 'auto',
                 'processes' => 3,
                 'tries' => 3,

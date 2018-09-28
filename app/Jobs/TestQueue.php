@@ -35,9 +35,6 @@ class TestQueue implements ShouldQueue
     public function handle(Listing $listings)
     {
         $this->listings = $listings;
-        for($i = 0; $i < 1000000; $i++){
-            $sum = 1 + 1;
-        }
         $listing = $this->listings->newQuery()->findOrFail($this->listing->getAttribute('id'));
         $listing->touch();
     }

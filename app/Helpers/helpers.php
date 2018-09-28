@@ -1,9 +1,10 @@
 <?php
 
 use App\File;
+use App\User;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
-use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Hash;
 
 function currentUser($guard, $field = null){
     if($field){
@@ -173,4 +174,8 @@ function booleanRandom($deepness = 0){
     } else {
         return rand(0, 1);
     }
+}
+
+function salt2fa($user){
+    return Hash::make($user->id.$user->timestamp.config('app.name').config('app.env'));
 }
