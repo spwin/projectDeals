@@ -1,5 +1,13 @@
 @extends('frontend.layout.wrapper')
 
+@section('social-meta')
+<meta property="og:url"         content="{{ url()->current() }}" />
+    <meta property="og:type"        content="article" />
+    <meta property="og:title"       content="{{ $listing->getRelation('deal')->getAttribute('name') }}" />
+    <meta property="og:description" content="{{ $listing->getRelation('deal')->getAttribute('description') }}" />
+    <meta property="og:image"       content="{{ url()->to('/').$listing->getRelation('deal')->getImage('760x500') }}" />
+@endsection
+
 @section('content')
     <main id="mainContent" class="main-content">
         <!-- Page Container -->
