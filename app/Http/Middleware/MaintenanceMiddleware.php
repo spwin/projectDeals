@@ -75,13 +75,15 @@ class MaintenanceMiddleware
 
     private function getAllowedDomains(){
         return [
-            'facebook.com'
+            'facebook.com',
+            'twitter.com'
         ];
     }
 
     private function getAllowedUserAgents(){
         return [
-            'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)'
+            'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)',
+            'Twitterbot/1.0'
         ];
     }
 }
