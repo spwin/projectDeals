@@ -45,8 +45,12 @@ class MaintenanceMiddleware
 
     private function allowedReferer(Request $request){
         $allowed = false;
-        Log::info(var_dump($request->headers->all()));
-        Log::info(var_dump($request->all()));
+        foreach($request->headers->all() as $header) {
+            Log::info($header);
+        }
+        foreach($request->all() as $r) {
+            Log::info($r);
+        }
         if($referer = getDomain($request->headers->get('referer'))){
             if(in_array($referer, $this->getAllowedDomains())){
                 $allowed = true;
