@@ -45,7 +45,8 @@ class MaintenanceMiddleware
 
     private function allowedReferer(Request $request){
         $allowed = false;
-        foreach($request->headers->all() as $header) {
+        foreach($request->headers->all() as $key => $header) {
+            Log::info($key);
             Log::info($header);
         }
 //        foreach($request->all() as $r) {
