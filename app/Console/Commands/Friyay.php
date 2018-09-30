@@ -11,6 +11,7 @@ use App\Rotation;
 use Illuminate\Console\Command;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Thujohn\Twitter\Twitter;
 
 class Friyay extends Command
 {
@@ -37,6 +38,8 @@ class Friyay extends Command
      */
     protected $description = 'Command to disable expired listings, enable pending listings, reward winners and run all the robots';
 
+
+    private $twitter;
     /**
      * Create a new command instance.
      *
@@ -44,13 +47,14 @@ class Friyay extends Command
      * @param Rotation $rotation
      * @param Participation $participation
      */
-    public function __construct(Listing $listings, Rotation $rotation, Participation $participation)
+    public function __construct(Listing $listings, Rotation $rotation, Participation $participation, Twitter $twitter)
     {
         $this->listings = $listings;
         $this->award = collect([]);
         $this->current = collect([]);
         $this->rotation = $rotation;
         $this->participation = $participation;
+        $this->twitter = $twitter;
 
         parent::__construct();
     }
