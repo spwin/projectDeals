@@ -8,6 +8,11 @@
             | {{ env('APP_NAME') ?: 'Friyay' }}
         @show
     </title>
+    @if(env('APP_DEBUG'))
+        <meta name="robots" content="noindex, nofollow">
+    @else
+        <meta name="robots" content="index, follow">
+    @endif
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="{{asset('assets/img/logo1.ico')}}"/>

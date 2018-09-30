@@ -18,7 +18,7 @@ class Listing extends Model
         'deal_id', 'weeks', 'coupons_count', 'starts_at', 'ends_at', 'valid', 'views',
         'status', 'reward', 'meta_data', 'slider_image', 'slider_image_id', 'menu_image',
         'menu_image_id', 'best_deals', 'category_featured', 'follow_link', 'newsletter',
-        'facebook_id', 'twitter_id', 'instagram_id', 'rotation_id'
+        'facebook_id', 'twitter_id', 'instagram_id', 'rotation_id', 'company_id'
     ];
 
     protected $casts = [
@@ -48,12 +48,20 @@ class Listing extends Model
         return $this->hasOne(Deal::class, 'id','deal_id');
     }
 
+    public function company(){
+        return $this->hasOne(Company::class, 'id', 'company_id');
+    }
+
     public function sliderImage(){
         return $this->hasOne(File::class, 'id', 'slider_image_id');
     }
 
     public function menuImage(){
         return $this->hasOne(File::class, 'id', 'menu_image_id');
+    }
+
+    public function coupons(){
+        return $this->hasMany(Coupon::class, 'listing_id', 'id');
     }
 
     public function getSliderImage($size = null){

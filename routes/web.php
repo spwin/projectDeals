@@ -20,7 +20,7 @@ Route::domain(env('BACKEND_DOMAIN'))->group(function(){
 
     Route::namespace('Admin')->prefix('admin')->group(function () {
         Route::middleware('role:admin')->group(function () {
-            Route::get('/', 'AdminController@dashboard')->name('admin.dashboard');
+            Route::get('/', 'AdminController@dashboard')->name('admin');
 
             // Users
             Route::get('/users/{role}', 'UsersController@index')->name('admin.users.list');
@@ -71,6 +71,8 @@ Route::domain(env('BACKEND_DOMAIN'))->group(function(){
 Route::namespace('Frontend')->domain(env('FRONTEND_DOMAIN'))->group(function(){
     Route::get('/', 'FrontendController@homepage')->name('homepage');
 
+    Route::get('/coming-soon', 'MaintenanceController@maintenance')->name('maintenance');
+
     Route::get('/listings/{id}/{slug}', 'ListingController@index')->name('listing');
     Route::get('/company/{id}/{slug}', 'CompanyController@view')->name('company');
 
@@ -84,8 +86,8 @@ Route::namespace('Frontend')->domain(env('FRONTEND_DOMAIN'))->group(function(){
         // User
         Route::get('/user', 'UserController@index')->name('user');
 
-//        Route::get('/login/2fa', 'UserController@twoFactorLogin')->name('user.login.2fa');
-//        Route::post('/login/2fa', 'UserController@twoFactorProcess')->name('user.login.2fa.process');
+        // Route::get('/login/2fa', 'UserController@twoFactorLogin')->name('user.login.2fa');
+        // Route::post('/login/2fa', 'UserController@twoFactorProcess')->name('user.login.2fa.process');
         Route::get('/logout', 'Auth\LoginController@logout')->name('user.logout');
     });
     Route::middleware('not:user')->group(function() {

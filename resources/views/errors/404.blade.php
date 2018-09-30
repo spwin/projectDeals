@@ -1,4 +1,4 @@
-@extends('frontend.layout.base')
+@extends('frontend.layout.wrapper')
 
 @section('content')
     <!-- –––––––––––––––[ PAGE CONTENT ]––––––––––––––– -->

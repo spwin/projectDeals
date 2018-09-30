@@ -1,6 +1,6 @@
 <nav class="navbar navbar-static-top">
     <div class="container-fluid m-0">
-        <a class="navbar-brand" href="{{ route('admin.dashboard') }}">
+        <a class="navbar-brand" href="{{ route('admin') }}">
             <h4><img src="{{asset('assets/img/logo1.ico')}}" class="admin_img" alt="logo"> FRIYAY</h4>
         </a>
         <div class="menu mr-sm-auto">

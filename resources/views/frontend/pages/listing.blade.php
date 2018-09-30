@@ -1,4 +1,4 @@
-@extends('frontend.layout.base')
+@extends('frontend.layout.wrapper')
 
 @section('content')
     <main id="mainContent" class="main-content">
@@ -25,7 +25,7 @@
                                                     @endforeach
                                                 </ul>
                                             </div>
-                                            @if($listing->getRelation('deal')->gallery->count() > 0)
+                                            {{--@if($listing->getRelation('deal')->gallery->count() > 0)
                                                 <div id="product_slider_nav" class="flexslider flexslider-nav">
                                                     <ul class="slides">
                                                         <li>
@@ -38,7 +38,7 @@
                                                         @endforeach
                                                     </ul>
                                                 </div>
-                                            @endif
+                                            @endif--}}
                                         </div>
 
                                     </div>

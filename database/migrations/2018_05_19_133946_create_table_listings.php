@@ -36,6 +36,9 @@ class CreateTableListings extends Migration
             $table->integer('deal_id')->unsigned()->nullable();
             $table->foreign('deal_id')->references('id')->on('deals')->onDelete('set null');
 
+            $table->integer('company_id')->unsigned()->nullable();
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('set null');
+
             // Ads
             $table->boolean('slider_image')->default(0);
             $table->integer('slider_image_id')->unsigned()->nullable();

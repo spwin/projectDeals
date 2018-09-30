@@ -50,7 +50,12 @@ class ProcessListingListener implements ShouldQueue
     public function handle(ProcessListing $event)
     {
         if(!$event->listing){
-            Log::error('No listing provided to PublishListener');
+            Log::error('No listing provided to ' . self::class);
+            return;
+        }
+
+        if(!$event->listing){
+            Log::error('No rotation provided to ' . self::class);
             return;
         }
 
@@ -59,7 +64,7 @@ class ProcessListingListener implements ShouldQueue
         // Set winner in database
         $this->participation->newQuery()->whereIn('user_id', $winners->pluck('id'))->update(['winner' => true]);
         foreach ($winners as $winner) {
-            event(new Award($event->listing, $winner));
+            event(new Award($event->listing, $winner, $event->rotation));
         }
 
         $participationToArchive = $this->participation->newQuery()

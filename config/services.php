@@ -45,9 +45,10 @@ return [
         'client_id'     => env('FACEBOOK_ID'),
         'client_secret' => env('FACEBOOK_SECRET'),
         'graph_version' => env('FACEBOOK_GRAPH_VERSION'),
+        'access_token' => env('FACEBOOK_ACCESS_TOKEN'),
         'app_token'  => env('FACEBOOK_APP_TOKEN'),
         'base_url' => env('FACEBOOK_URL'),
-        'page_id' => env('FACEBOOK_PAGE_ID')
+        'page_id' => env('FACEBOOK_PAGE_ID'),
     ]
 
 ];

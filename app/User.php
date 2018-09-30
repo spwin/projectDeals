@@ -72,6 +72,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Listing::class, 'participation')->withPivot('winner');
     }
 
+    public function coupons($unused = true){
+        return $this->hasMany(Coupon::class, 'coupon_id', 'id')->where(['used' => !$unused]);
+    }
+
     public function avatar($size = null){
         if($image = $this->image) {
             if ($size) {

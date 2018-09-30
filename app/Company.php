@@ -37,6 +37,14 @@ class Company extends Model
         return $this->hasOne(File::class, 'id', 'image_id');
     }
 
+    public function listings(){
+        return $this->hasMany(Listing::class, 'company_id', 'id');
+    }
+
+    public function coupons(){
+        return $this->hasMany(Coupon::class, 'company_id', 'id');
+    }
+
     public function logo($size = null){
         if($image = $this->image) {
             if ($size) {

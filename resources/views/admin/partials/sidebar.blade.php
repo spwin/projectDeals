@@ -19,8 +19,8 @@
             <hr/>
         </div>
         <ul id="menu">
-            <li {!! (request()->is('admin.dashboard')? 'class="active"':"") !!}>
-                <a href="{{ route('admin.dashboard') }} ">
+            <li {!! (request()->is('admin')? 'class="active"':"") !!}>
+                <a href="{{ route('admin') }} ">
                     <i class="fa fa-tachometer"></i>
                     <span class="link-title menu_hide">&nbsp;Dashboard</span>
                 </a>

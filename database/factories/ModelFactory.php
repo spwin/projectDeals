@@ -138,8 +138,12 @@ $factory->define(App\Listing::class, function (Faker\Generator $faker) {
         $endsAt = addWeeks($startsAt, $weeks);
     }
 
+    $deal = $deals->random();
+    $company = $deal->getAttribute('company_id');
+
     $return = [
-        'deal_id' => $deals->random(),
+        'deal_id' => $deal,
+        'company_id' => $company,
         'weeks' => $weeks,
         'passed' => rand(0, 1),
         'coupons_count' => rand(1, 10),

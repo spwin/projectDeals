@@ -23,7 +23,7 @@ class FacebookService extends Controller
                 'default_graph_version' => config('services.facebook.graph_version')
             ]);
             $this->fb->setDefaultAccessToken(
-                'EAAB8QKeHlZAgBAM3ZAl22lb0ZC6gwW6DsKy6SO7gBNae3wKG50sISNxADBSdHIvsF9KwNIPpLgEDZClyKWOnsC3Rg9SMh4W0tAfQBDYziHNmdv0agL90A5dkx7DnX6VEzDybMg21xlU2j6u2k29WwHuJmjx5rOxp7C8Pk0pm3AZDZD'
+                config('services.facebook.access_token')
                 // $this->fb->getApp()->getAccessToken()
             );
         } catch (FacebookSDKException $e) {
@@ -35,7 +35,7 @@ class FacebookService extends Controller
         try {
             $response = $this->fb->post("/{$this->pageID}/feed/", [
                 'message' => $listing->getRelation('deal')->getAttribute('description'),
-                'link' => route('listing', ['id' => $listing->getAttribute('id'), 'slug' => $listing->getRelation('deal')->getAttribute('slug')])
+                'link' => route('listing', ['id' => $listing->getAttribute('id'), 'slug' => $listing->getRelation('deal')->getAttribute('slug')]),
             ], $this->fb->getDefaultAccessToken());
         } catch(FacebookResponseException $e) {
             echo $e->getMessage();

@@ -23,6 +23,7 @@ class Friyay extends Command
     protected $current;
     protected $rotation;
     protected $participation;
+    protected $currentRotation;
 
     protected $job;
     /**
@@ -71,12 +72,14 @@ class Friyay extends Command
         $result = DB::transaction(function () {
 
             // Create new week rotation
-            $this->newRotation();
+            $this->currentRotation = $this->newRotation();
+
             // Disable expired listings and update/enable new ones
             $this->rotateListings();
+
         }, 5);
 
-        if(is_null($result)) {
+        if(is_null($result) && $this->currentRotation) {
             // Auto generate posts on social pages and announce the deals for all
             foreach ($this->current as $listing) {
                 event(new Publish($listing));
@@ -89,7 +92,7 @@ class Friyay extends Command
             // Randomly select the winners
             // Generate coupons
             foreach ($this->award as $listing) {
-                event(new ProcessListing($listing));
+                event(new ProcessListing($listing, $this->currentRotation));
             }
         } else {
             report(new \Exception());
@@ -113,10 +116,13 @@ class Friyay extends Command
 
     private function newRotation(){
         $now = Carbon::now();
-        $this->rotation->newQuery()->where(['active' => true])->update(['active' => false, 'ended_at' => $now]);
+        $this->rotation->newQuery()->where(['previous' => true])->update(['previous' => false]);
+        $this->rotation->newQuery()->where(['active' => true])->update(['active' => false, 'previous' => true, 'ended_at' => $now]);
 
         $newRotation = new Rotation();
         $newRotation->fill(['started_at' => $now])->save();
+
+        return $newRotation;
     }
 
     private function rotateListings(){
@@ -136,7 +142,7 @@ class Friyay extends Command
     }
 
     private function getLiveListings(){
-        return $this->listings->newQuery()->with('deal', 'participants')->where(['valid' => true])->get();
+        return $this->listings->newQuery()->with('deal', 'participants', 'company')->where(['valid' => true])->get();
     }
 
     private function decrementWeeksForLiveListings(){

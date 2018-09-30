@@ -19,6 +19,7 @@ class CreateTableRotation extends Migration
             $table->dateTime('ended_at')->nullable();
             $table->json('data')->nullable();
             $table->boolean('active')->default(true);
+            $table->boolean('previous')->default(false);
             $table->timestamps();
         });
     }

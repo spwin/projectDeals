@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!--[if lt IE 9 ]> <html lang="zxx" dir="ltr" class="no-js ie-old"> <![endif]-->
-<!--[if IE 9 ]> <html lang="zxx" dir="ltr" class="no-js ie9"> <![endif]-->
-<!--[if IE 10 ]> <html lang="zxx" dir="ltr" class="no-js ie10"> <![endif]-->
+<!--[if lt IE 9 ]> <html lang="en-GB" dir="ltr" class="no-js ie-old"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en-GB" dir="ltr" class="no-js ie9"> <![endif]-->
+<!--[if IE 10 ]> <html lang="en-GB" dir="ltr" class="no-js ie10"> <![endif]-->
 <!--[if (gt IE 10)|!(IE)]><!-->
-<html lang="zxx" dir="ltr" class="no-js">
+<html lang="en-GB" dir="ltr" class="no-js">
 <!--<![endif]-->
 
 <head>
@@ -23,18 +23,18 @@
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- PAGE TITLE                                -->
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
-    <title>FRIYAY | Coupons, Deals, Discounts and Promo codes Template</title>
+    <title>Friyay</title>
 
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- SEO METAS                                 -->
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
-    <meta name="description" content="brief description here">
-    <meta name="keywords" content="insert, keywords, here">
-    @if(env('APP_DEBUG'))
-        <meta name="robots" content="noindex, nofollow">
-    @else
-        <meta name="robots" content="index, follow">
-    @endif
+    <meta name="description" content="Free deals in London">
+    <meta name="keywords" content="free, deals, london, contest, win, draws, giveaway, friyay, friday">
+@if(env('APP_DEBUG'))
+    <meta name="robots" content="noindex, nofollow">
+@else
+    <meta name="robots" content="index, follow">
+@endif
 
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- PAGE FAVICON                              -->
@@ -103,17 +103,7 @@
     <!-- WRAPPER                                   -->
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <div id="pageWrapper" class="page-wrapper">
-        <!-- –––––––––––––––[ HEADER ]––––––––––––––– -->
-        @include('frontend.layout.header')
-        <!-- –––––––––––––––[ HEADER ]––––––––––––––– -->
-
-        @yield('content')
-
-        @include('frontend.layout.bottom')
-        <!-- –––––––––––––––[ FOOTER ]––––––––––––––– -->
-        @include('frontend.layout.footer')
-        <!-- –––––––––––––––[ END FOOTER ]––––––––––––––– -->
-
+        @yield('wrapper')
     </div>
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- END WRAPPER                               -->
@@ -153,28 +143,6 @@
 
     <!-- Coutdown -->
     <script type="text/javascript" src="{{ asset('vendors/countdown/jquery.countdown.js') }}"></script>
-
-    {{--<script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '{{ env('FACEBOOK_ID') }}',
-                cookie     : true,
-                xfbml      : true,
-                version    : 'v3.0'
-            });
-
-            FB.AppEvents.logPageView();
-
-        };
-
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>--}}
 
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- Custom Template JavaScript                -->

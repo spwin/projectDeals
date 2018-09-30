@@ -91,4 +91,6 @@ return [
             ],
         ],
     ],
+
+    'middleware' => ['web']
 ];

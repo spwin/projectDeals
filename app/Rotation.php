@@ -18,7 +18,7 @@ class Rotation  extends Model
      * @var array
      */
     protected $fillable = [
-        'started_at', 'ended_at', 'data', 'active'
+        'started_at', 'ended_at', 'data', 'active', 'previous'
     ];
 
     protected $casts = [
@@ -27,5 +27,9 @@ class Rotation  extends Model
 
     public function listings(){
         return $this->hasMany(Participation::class, 'rotation_id', 'id');
+    }
+
+    public function coupons(){
+        return $this->hasMany(Coupon::class, 'rotation_id', 'id');
     }
 }

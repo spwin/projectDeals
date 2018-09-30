@@ -48,6 +48,10 @@ class Deal extends Model
         return $this->belongsToMany(User::class, 'deal_reviews')->withPivot('review', 'rating', 'date');
     }
 
+    public function coupons(){
+        return $this->hasMany(Coupon::class, 'deal_id', 'id');
+    }
+
     public function getImage($size = null){
         if($image = $this->image) {
             if ($size) {
