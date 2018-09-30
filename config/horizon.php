@@ -92,5 +92,5 @@ return [
         ],
     ],
 
-    'middleware' => ['web']
+    'middleware' => ['web', 'role:admin'],
 ];

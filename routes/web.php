@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::domain(env('BACKEND_DOMAIN'))->group(function(){
     Route::namespace('Manager')->group(function () {
         Route::get('/', function(){
