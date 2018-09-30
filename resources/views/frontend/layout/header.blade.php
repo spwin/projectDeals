@@ -67,12 +67,12 @@
                             </form>
                         </div>
                         <div class="col-sm-3 t-xs-center t-md-right">
-                            <div class="header-wishlist ml-20">
-                                <a href="wishlist.html">
-                                    <span class="icon lnr lnr-heart font-30"></span>
-                                    <span class="title">Wish List</span>
-                                </a>
-                            </div>
+                            {{--<div class="header-wishlist ml-20">--}}
+                                {{--<a href="wishlist.html">--}}
+                                    {{--<span class="icon lnr lnr-heart font-30"></span>--}}
+                                    {{--<span class="title">Wish List</span>--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
                         </div>
                     </div>
                 </div>
