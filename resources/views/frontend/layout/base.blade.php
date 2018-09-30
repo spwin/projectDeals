@@ -74,6 +74,18 @@
 
     @stack('styles')
 
+    @if($analytics = config('seo.google.analytics'))
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ $analytics }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', {{ $analytics }});
+    </script>
+    @endif
+
 </head>
 
 <body id="body" class="wide-layout preloader-active">
