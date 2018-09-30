@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class MaintenanceMiddleware
 {
@@ -44,6 +45,7 @@ class MaintenanceMiddleware
 
     private function allowedReferer(Request $request){
         $allowed = false;
+        Log::info(print_r($request->headers->all()));
         if($referer = getDomain($request->headers->get('referer'))){
             if(in_array($referer, $this->getAllowedDomains())){
                 $allowed = true;
