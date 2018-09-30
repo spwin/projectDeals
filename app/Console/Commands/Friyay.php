@@ -3,14 +3,11 @@
 namespace App\Console\Commands;
 
 use App\Enums\ListingStatus;
-use App\Events\Award;
 use App\Events\ProcessListing;
 use App\Events\Publish;
 use App\Listing;
 use App\Participation;
-use App\ParticipationArchive;
 use App\Rotation;
-use App\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -66,6 +63,10 @@ class Friyay extends Command
         // dapalnitelna paslauga zostawic firma bez live listingu
         // jezeli zauwazono ze user w systemie ma wiecej niz 3 soc acc to on popada do listy padazrenija
         $this->test = $this->option('test');
+
+        $listing = $this->listings->newQuery()->first();
+        event(new Publish($listing));
+        die();
 
         $time_start = microtime(true);
 

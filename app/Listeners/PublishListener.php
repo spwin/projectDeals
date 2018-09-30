@@ -46,9 +46,8 @@ class PublishListener implements ShouldQueue
             return;
         }
 
-        // $fb = new FacebookService();
-        // $postID = $fb->publish($event->listing);
-        $postID = 1;
+        $fb = new FacebookService();
+        $postID = $fb->publish($event->listing);
         $event->listing->update(['facebook_id' => $postID]);
     }
 }
