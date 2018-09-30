@@ -58,7 +58,8 @@ class MaintenanceMiddleware
 
     private function getAllowedIPs(){
         return [
-            '127.0.0.1'
+            '127.0.0.1',
+            '79.66.162.252'
         ];
     }
 
