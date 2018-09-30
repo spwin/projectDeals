@@ -37,7 +37,16 @@ class MaintenanceMiddleware
 
     private function allowedConnection(Request $request){
         $allowed = false;
-        if($this->allowedIP($request) || $this->allowedReferer($request)){
+        if($this->allowedIP($request) || $this->allowedReferer($request) || $this->allowedUserAgent($request)){
+            $allowed = true;
+        }
+        return $allowed;
+    }
+
+    private function allowedUserAgent(Request $request){
+        $allowed = false;
+        $agent = $request->headers->get('user-agent');
+        if(in_array($agent, $this->getAllowedUserAgents())){
             $allowed = true;
         }
         return $allowed;
@@ -45,14 +54,6 @@ class MaintenanceMiddleware
 
     private function allowedReferer(Request $request){
         $allowed = false;
-        foreach($request->headers->all() as $key => $header) {
-            Log::info($key);
-            Log::info($header);
-        }
-//        foreach($request->all() as $r) {
-//            Log::info($r);
-//            //facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
-//        }
         if($referer = getDomain($request->headers->get('referer'))){
             if(in_array($referer, $this->getAllowedDomains())){
                 $allowed = true;
@@ -75,6 +76,12 @@ class MaintenanceMiddleware
     private function getAllowedDomains(){
         return [
             'facebook.com'
+        ];
+    }
+
+    private function getAllowedUserAgents(){
+        return [
+            'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)'
         ];
     }
 }
