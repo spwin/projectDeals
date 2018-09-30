@@ -64,7 +64,7 @@ class Friyay extends Command
         // jezeli zauwazono ze user w systemie ma wiecej niz 3 soc acc to on popada do listy padazrenija
         $this->test = $this->option('test');
 
-        $listing = $this->listings->newQuery()->first();
+        $listing = $this->listings->newQuery()->with('deal', 'participants', 'company')->first();
         event(new Publish($listing));
         die();
 
