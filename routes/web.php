@@ -15,8 +15,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::domain(env('BACKEND_DOMAIN'))->group(function(){
     Route::namespace('Manager')->group(function () {
-        Route::get('/', function(){
-            echo 'Manager login';
+        Route::middleware('role:manager')->group(function () {
+            Route::get('/', 'ManagerController@dashboard')->name('manager');
+        });
+        /*  ==============
+            Authentication
+            ==============  */
+        Route::middleware('role:manager')->group(function () {
+            Route::get('/logout', 'Auth\LoginController@logout')->name('manager.logout');
+        });
+        Route::middleware('not:admin')->group(function() {
+            Route::get('/login', 'Auth\LoginController@showLoginForm')->name('manager.login.form');
+            Route::post('/login', 'Auth\LoginController@login')->name('manager.login.process');
         });
     });
 
@@ -86,7 +96,7 @@ Route::namespace('Frontend')->domain(env('FRONTEND_DOMAIN'))->group(function(){
         Route::post('/listing/{id}/rate', 'DealController@rate')->name('deal.rate');
 
         // User
-        Route::get('/user', 'UserController@index')->name('user');
+        Route::get('/dashboard', 'UserController@index')->name('user');
 
         // Route::get('/login/2fa', 'UserController@twoFactorLogin')->name('user.login.2fa');
         // Route::post('/login/2fa', 'UserController@twoFactorProcess')->name('user.login.2fa.process');

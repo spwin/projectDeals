@@ -13,7 +13,7 @@
     <!--End of Plugin styles-->
     <link type="text/css" rel="stylesheet" href="{{asset('assets/css/pages/login.css')}}"/>
 </head>
-<body class="login_backimg">
+<body class="login_manager">
 <div class="preloader" style=" position: fixed;
   width: 100%;
   height: 100%;
@@ -53,7 +53,7 @@ z-index: 999999">
                                 </ul>
                             </div>
                         @endif
-                        <form action="{{ route('admin.login.process') }}" id="login_validator" method="post">
+                        <form action="{{ route('manager.login.process') }}" id="login_validator" method="post">
                             {{ csrf_field()}}
                             <div class="form-group">
                                 <label for="email" class="col-form-label text-white"> E-mail</label>

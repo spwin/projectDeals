@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-sm-12 col-md-4 is-hidden-sm-down">
                     <ul class="nav-top nav-top-left list-inline t-left">
-                        <li><a href="{{ route('static', ['view' => 'faq']) }}"><i class="fa fa-question-circle"></i>FAQ</a>
-                        </li>
+                        {{--<li><a href="{{ route('static', ['view' => 'faq']) }}"><i class="fa fa-question-circle"></i>FAQ</a>--}}
+                        {{--</li>--}}
                         <li><a href="{{ route('static', ['view' => 'customer-assistance']) }}"><i class="fa fa-support"></i>Customer Assistance</a>
                         </li>
                     </ul>
@@ -117,13 +117,15 @@
                                     </div>
                                     @foreach($liveListings->where('menu_image', true)->shuffle()->slice(0,3) as $listing)
                                         <div class="col-md-3">
-                                            <figure class="deal-thumbnail embed-responsive embed-responsive-4by3" data-bg-img="{{ $listing->getMenuImage() ?: 'images/deals/deal_03.jpg' }}">
-                                                <div class="deal-about p-10 pos-a bottom-0 left-0">
-                                                    <h6 class="deal-title mb-10">
-                                                        <a href="deal_single.html" class="color-lighter">{{ $listing->getRelation('deal')->getAttribute('name') }}</a>
-                                                    </h6>
-                                                </div>
-                                            </figure>
+                                            <a href="{{ route('listing', ['id' => $listing->getAttribute('id'), 'slug' => $listing->getRelation('deal')->getAttribute('slug')]) }}" class="color-lighter">
+                                                <figure class="deal-thumbnail embed-responsive embed-responsive-4by3" data-bg-img="{{ $listing->getMenuImage() ?: 'images/deals/deal_03.jpg' }}">
+                                                    <div class="deal-about p-10 pos-a bottom-0 left-0">
+                                                        <h6 class="deal-title mb-10">
+                                                            {{ $listing->getRelation('deal')->getAttribute('name') }}
+                                                        </h6>
+                                                    </div>
+                                                </figure>
+                                            </a>
                                         </div>
                                     @endforeach
                                 </div>

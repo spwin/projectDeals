@@ -86,14 +86,14 @@ class Friyay extends Command
 
         if(is_null($result) && $this->currentRotation) {
             // Auto generate posts on social pages and announce the deals for all
-            foreach ($this->current as $listing) {
-                event(new Publish($listing));
-            }
+            /** TODO: create calendars for companies to choose dates and social platforms by themselves */
+//            foreach ($this->current as $listing) {
+//                event(new Publish($listing));
+//            }
 
             // Set current participation to be sent to archive
             $this->archiveParticipation();
 
-            // Change images on social pages to expired (red corner badge)
             // Randomly select the winners
             // Generate coupons
             foreach ($this->award as $listing) {

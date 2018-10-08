@@ -10,6 +10,10 @@ $(document).ready(function() {
         , "assets/img/login10.png"*/
     ], {duration: 3000, fade: 750});
 
+    $(".login_manager").backstretch([
+        "/assets/img/manager_login.jpg"
+    ], {duration: 3000, fade: 750});
+
     $('#login_validator').bootstrapValidator({
         fields: {
             email: {
